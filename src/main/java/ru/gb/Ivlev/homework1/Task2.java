@@ -6,8 +6,6 @@ public class Task2 {
         System.out.println("Orange");
         System.out.println("Apple");
     }
-
-
     public static void main(String[] args) {
         printThreeWords();
 
