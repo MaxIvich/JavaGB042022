@@ -7,6 +7,6 @@ public class task5 {
                 return leap;
       }
       public static void main(String[] args) {
-        leapYear(100);
+        leapYear(2100);
     }
 }
