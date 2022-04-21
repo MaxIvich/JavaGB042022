@@ -12,8 +12,6 @@ public class Task1 {
                 a[i]=1;
             }
             System.out.printf("%2d",a[i]);
-
         }
     }
-
 }

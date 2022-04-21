@@ -13,8 +13,6 @@ public class Task4 {
                 System.out.printf("%2d",arr[i][j]);
             }
             System.out.println();
-
         }
-
     }
 }
