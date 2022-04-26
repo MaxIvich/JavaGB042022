@@ -43,16 +43,21 @@ import java.util.Scanner;
         }
 
         public static boolean checkWin(char symb) {
-            int checkdiag=0;
+            int checkdiagleft=0;
+            int checkdiagright =0;
 
             for (int j = 0; j < SIZE; j++) {
                 int checkline=0;
                 int checkcolumn = 0;
 
-                if (map[j][j] == symb || map[(SIZE - 1) - j][j] == symb) {
-                        checkdiag = checkdiag + 1;
-                        if (checkdiag==DOTS_TO_WIN) return true;
+                if (map[j][j] == symb ) {
+                        checkdiagleft = checkdiagleft + 1;
+                        if (checkdiagleft==DOTS_TO_WIN) return true;
                     }
+                if(map[(SIZE - 1) - j][j] == symb){
+                    checkdiagright=checkdiagright+1;
+                    if(checkdiagright==DOTS_TO_WIN) return true;
+                }
                 for (int i = 0; i < SIZE; i++){
 
                         if (map[j][i] == symb){
@@ -104,14 +109,27 @@ import java.util.Scanner;
                         if (checkWin(map[i][j])) {
                             x = i;
                             y = j;
-                            map[y][x] = DOT_O;
+                            map[i][j] = DOT_O;
                             System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y +
                                     1));
                             return;
                         }
                         else map[i][j]=DOT_EMPTY;
                     }
-                }//(!isCellValid(x, y))
+                    if (map[i][j]==DOT_EMPTY) {
+                        map[i][j] = DOT_O;
+                        if (checkWin(map[i][j])) {
+                            x = i;
+                            y = j;
+                            map[i][j] = DOT_O;
+                            System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y +
+                                    1));
+                            return;
+
+                        } else map[i][j] = DOT_EMPTY;
+                    }
+
+                }
             }
             do{
                 x = rand.nextInt(SIZE);
@@ -119,8 +137,10 @@ import java.util.Scanner;
             }while (!isCellValid(x, y));
             System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y +
                     1));
-            map[y][x] = DOT_O;
+            map[x][y] = DOT_O;
             return;
+
+
 
 
         }
