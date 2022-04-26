@@ -97,25 +97,32 @@ import java.util.Scanner;
         }
         public static void aiTurn() {
             int x, y;
-            do {
-                for (int i = 0; i <SIZE ; i++) {
-                    for (int j = 0; j <SIZE ; j++) {
-                        map[i][j]=DOT_X;
-                        if (checkWin(DOT_X)){
-
+            for (int i = 0; i <SIZE ; i++) {
+                for (int j = 0; j <SIZE ; j++) {
+                    if (map[i][j]==DOT_EMPTY) {
+                        map[i][j] = DOT_X;
+                        if (checkWin(map[i][j])) {
+                            x = i;
+                            y = j;
+                            map[y][x] = DOT_O;
+                            System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y +
+                                    1));
+                            return;
                         }
-
+                        else map[i][j]=DOT_EMPTY;
                     }
-
-                }
-
-
-               // x = rand.nextInt(SIZE);
-               // y = rand.nextInt(SIZE);
-            } while (!isCellValid(x, y));
+                }//(!isCellValid(x, y))
+            }
+            do{
+                x = rand.nextInt(SIZE);
+                y = rand.nextInt(SIZE);
+            }while (!isCellValid(x, y));
             System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y +
                     1));
             map[y][x] = DOT_O;
+            return;
+
+
         }
         public static void humanTurn() {
             int x, y;
