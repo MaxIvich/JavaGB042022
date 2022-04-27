@@ -75,25 +75,29 @@ public class Worker {
                     printData(worker1);
 
            Worker[] workers = new Worker[5];
-        workers[0] = new Worker("Иванов Иван Иванович","engineer","123@ru"
-                ,112358,60000,45);
-        workers[1] = new Worker("Петров Константин Андреевич", "engineer", "1234@ru"
-                , 112358, 20000, 19);
-        workers[2] = new  Worker("Сидоров Александр Алексеевич", "engineer", "1235@ru"
-                , 112358, 50000, 35);
-        workers[3] = new Worker("Федоров Игорь Евгеньевич", "engineer", "1236@ru"
-                , 112358, 30000, 25);
-        workers[4] = new Worker("Лебедев Павел Викторович", "engineer", "1237@ru"
-                , 112358, 40000, 40);
+        workers[0] =worker1;
+        workers[1] =worker2;
+        workers[2] =worker3;
+        workers[3] =worker4;
+        workers[4] =worker5;
+
 
         for (int i = 0; i <workers.length ; i++) {
                  if(workers[i].age>=40){
                      System.out.println(workers[i].fullname +" "+ workers[i].post +" "+ workers[i].email+" "+workers[i].phoneNumber+" "+
                              workers[i].salary+" "+workers[i].age);
-
                  }
         }
     }
 }
 
-
+//                      new Worker("Иванов Иван Иванович","engineer","123@ru"
+//                              ,112358,60000,45);
+//                              new Worker("Петров Константин Андреевич", "engineer", "1234@ru"
+//                              , 112358, 20000, 19);
+//                              new  Worker("Сидоров Александр Алексеевич", "engineer", "1235@ru"
+//                              , 112358, 50000, 35);
+//                              new Worker("Федоров Игорь Евгеньевич", "engineer", "1236@ru"
+//                              , 112358, 30000, 25);
+//                              new Worker("Лебедев Павел Викторович", "engineer", "1237@ru"
+//                              , 112358, 40000, 40);
