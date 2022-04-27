@@ -58,7 +58,6 @@ public class Worker {
         System.out.println(a.fullname +" "+ a.post+ " "+a.email+" "+a.phoneNumber+" "+a.salary+" "+a.age);
     }
 
-
     public static void main(String[] args) {
 
        Worker worker1 = new Worker("Иванов Иван Иванович", "engineer", "123@ru"
@@ -75,16 +74,15 @@ public class Worker {
                     printData(worker1);
 
            Worker[] workers = new Worker[5];
-        workers[0] =worker1;
-        workers[1] =worker2;
-        workers[2] =worker3;
-        workers[3] =worker4;
-        workers[4] =worker5;
+           workers[0] =worker1;
+           workers[1] =worker2;
+           workers[2] =worker3;
+           workers[3] =worker4;
+           workers[4] =worker5;
 
-
-        for (int i = 0; i <workers.length ; i++) {
-                 if(workers[i].age>=40){
-                     System.out.println(workers[i].fullname +" "+ workers[i].post +" "+ workers[i].email+" "+workers[i].phoneNumber+" "+
+                for (int i = 0; i <workers.length ; i++) {
+                     if(workers[i].age>=40){
+                         System.out.println(workers[i].fullname +" "+ workers[i].post +" "+ workers[i].email+" "+workers[i].phoneNumber+" "+
                              workers[i].salary+" "+workers[i].age);
                  }
         }
