@@ -29,6 +29,6 @@ public class WorkerInfo {
             }
 
         }
-       String printData = worker1.printData(worker4) ;
+       String printData = worker2.printData() ;
     }
 }

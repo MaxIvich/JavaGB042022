@@ -65,9 +65,9 @@ public class Worker {
             this.age = age;
         }
 
-         public String printData(Worker a) {
+         public String printData() {
 
-                    String b = a.fullname + " " + a.post + " " + a.email + " " + a.phoneNumber + " " + a.salary + " " + a.age;
+                    String b = fullname + " " + post + " " + email + " " + phoneNumber + " " + salary + " " + age;
                     System.out.println(b);
                     return b;
 
