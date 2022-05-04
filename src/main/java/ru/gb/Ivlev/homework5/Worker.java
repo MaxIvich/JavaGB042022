@@ -65,11 +65,11 @@ public class Worker {
             this.age = age;
         }
 
-         public String printData() {
+         public void printData() {
 
                     String b = fullname + " " + post + " " + email + " " + phoneNumber + " " + salary + " " + age;
                     System.out.println(b);
-                    return b;
+
 
          }
 }

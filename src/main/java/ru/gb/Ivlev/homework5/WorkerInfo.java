@@ -24,11 +24,12 @@ public class WorkerInfo {
 
         for (int i = 0; i <workers.length ; i++) {
             if(workers[i].getAge()>=40) {
-                System.out.println(workers[i].getFullname() + " " + workers[i].getPost() + " " + workers[i].getEmail() + " " + workers[i].getPhoneNumber() + " " +
-                        workers[i].getSalary() + " " + workers[i].getAge());
+                workers[i].printData();
+              // System.out.println(workers[i].getFullname() + " " + workers[i].getPost() + " " + workers[i].getEmail() + " " + workers[i].getPhoneNumber() + " " +
+              //         workers[i].getSalary() + " " + workers[i].getAge());
             }
 
         }
-       String printData = worker2.printData() ;
+       worker2.printData() ;
     }
 }
