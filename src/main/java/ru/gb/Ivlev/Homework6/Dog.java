@@ -18,7 +18,7 @@ public class Dog extends Animal {
             if (a <= 500) {
                 System.out.println(getName() + " пробежал " + a + "  метров");
             } else {
-                System.out.println(getName() + "  устал на 200 метров ");
+                System.out.println(getName() + "  устал на 500 метров ");
             }
         }
 
