@@ -5,13 +5,11 @@ public abstract class Animal {
     private int age;
     private static int quantity;
 
- public Animal(String name, int age){
+   public Animal(String name, int age){
        this.name= name;
        this.age = age;
        quantity ++;
-
-
-    }
+       }
     public String getName(){
         return name;
     }
