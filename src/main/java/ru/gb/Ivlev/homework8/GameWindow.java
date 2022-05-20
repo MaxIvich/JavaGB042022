@@ -11,8 +11,11 @@ public class GameWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         JTextField textField= new JTextField();
         textField.setFont(new Font("Arial", Font.BOLD, 90));
-        add(textField);
+        textField.setBackground(Color.gray);
+
+        textField.setForeground(Color.YELLOW);
         textField.setText("           НИЧЬЯ");
+        add(textField);
 
 
 

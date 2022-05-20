@@ -97,7 +97,7 @@ public class GameUi extends JFrame {
     public void aiTurn (){
 
         if(isMapFull()){
-            setVisible(false);
+           // setVisible(false);
             GameWindow gameWindow = new GameWindow();
             return;
         }
@@ -111,7 +111,7 @@ public class GameUi extends JFrame {
                         Y = j;
                         btn[i][j].setText(String.valueOf(DOT_O));
                         if (checkWin(String.valueOf(DOT_O))) {
-                            setVisible(false);
+                           // setVisible(false);
                             AIWindow aiWindow = new AIWindow();
 
                             System.out.println("Вин AИ");
@@ -123,7 +123,7 @@ public class GameUi extends JFrame {
                 if (btn[i][j].getText().equals(String.valueOf(DOT_EMPTY))) {
                     btn[i][j].setText(String.valueOf(DOT_O));
                     if (checkWin(String.valueOf(DOT_O))) {
-                        setVisible(false);
+                        //setVisible(false);
                         AIWindow aiWindow = new AIWindow();
 
                         System.out.println("Вин AИ");
@@ -132,7 +132,7 @@ public class GameUi extends JFrame {
                     if (checkWin(btn[i][j].getText())) {
                         btn[i][j].setText(String.valueOf(DOT_O));
                         if (checkWin(String.valueOf(DOT_O))) {
-                            setVisible(false);
+                           // setVisible(false);
                             AIWindow aiWindow = new AIWindow();
 
                             System.out.println("Вин AИ");
@@ -152,7 +152,7 @@ public class GameUi extends JFrame {
            System.out.println(String.valueOf(X) + " " + String.valueOf(Y));
        }
        // else aiTurn();
-        else GameRules();
+        else aiTurn();
     }
     public  boolean isCellValid(int x, int y) {
       if (btn[x][y].getText().equals(String.valueOf(DOT_X))||btn[x][y].getText().equals(String.valueOf(DOT_O))) return false;
@@ -165,13 +165,13 @@ public class GameUi extends JFrame {
            }
            System.out.println(String.valueOf(X) + " "+ String.valueOf(Y));
            if( checkWin(String.valueOf(DOT_X))){
-               System.out.println("Победа человека");
+               //System.out.println("Победа человека");
                HumanWindow humanWindow=new HumanWindow();
                setVisible(false);
            }
 
           // else aiTurn();
-            else GameRules();
+            else aiTurn();;
 
 
 
@@ -191,16 +191,7 @@ public class GameUi extends JFrame {
         }
         return true;
     }
-    public void GameRules(){
-        if (checkWin(String.valueOf(DOT_O))) {
-            setVisible(false);
-            AIWindow aiWindow = new AIWindow();
 
-            System.out.println("Вин AИ");
-
-        }
-        aiTurn();
-    }
 
 
 

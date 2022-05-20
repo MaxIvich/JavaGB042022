@@ -9,6 +9,8 @@ public class HumanWindow extends JFrame {
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     JTextField textField= new JTextField();
     textField.setFont(new Font("Arial", Font.BOLD, 80));
+    textField.setForeground(Color.GREEN);
+    textField.setBackground(Color.gray);
     add(textField);
     textField.setText("   ПОБЕДИЛ ЧЕЛОВЕК");
 

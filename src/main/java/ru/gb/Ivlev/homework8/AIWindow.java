@@ -9,6 +9,8 @@ public class AIWindow extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         JTextField textField= new JTextField();
         textField.setFont(new Font("Arial", Font.BOLD, 90));
+        textField.setForeground(Color.RED);
+        textField.setBackground(Color.gray);
         add(textField);
         textField.setText("     ПОБЕДИЛ ИИ");
 
