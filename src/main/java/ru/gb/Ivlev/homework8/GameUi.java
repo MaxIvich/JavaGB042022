@@ -31,10 +31,13 @@ public class GameUi extends JFrame {
                 add(btn[i][j]);
                 int J = j;
                 int I = i;
+
                 btn[i][j].addActionListener(new ActionListener() {
                 @Override
                 public void  actionPerformed(ActionEvent e) {
-                    humanTern(I,J);
+                    if(btn[I][J].getText().equals(String.valueOf(DOT_EMPTY))){
+                        humanTern(I,J);}
+
 
 
 
@@ -92,100 +95,83 @@ public class GameUi extends JFrame {
 
 
     public void aiTurn (){
+
         if(isMapFull()){
             setVisible(false);
             GameWindow gameWindow = new GameWindow();
-
-
             return;
-
         }
-
-
-
         int X,Y;
         for (int i = 0; i <SIZE ; i++) {
             for (int j = 0; j <SIZE ; j++) {
                 if (btn[i][j].getText().equals(String.valueOf(DOT_EMPTY))) {
                     btn[i][j].setText(String.valueOf(DOT_X));
                     if (checkWin(btn[i][j].getText())) {
-
                         X = i;
                         Y = j;
                         btn[i][j].setText(String.valueOf(DOT_O));
+                        if (checkWin(String.valueOf(DOT_O))) {
+                            setVisible(false);
+                            AIWindow aiWindow = new AIWindow();
 
+                            System.out.println("Вин AИ");
+
+                        }
                         return;
-                    }
-                    else btn[i][j].setText( String.valueOf(DOT_EMPTY));
+                    } else btn[i][j].setText(String.valueOf(DOT_EMPTY));
                 }
-                if (btn[i][j].getText().equals(String.valueOf(DOT_EMPTY))){
+                if (btn[i][j].getText().equals(String.valueOf(DOT_EMPTY))) {
                     btn[i][j].setText(String.valueOf(DOT_O));
+                    if (checkWin(String.valueOf(DOT_O))) {
+                        setVisible(false);
+                        AIWindow aiWindow = new AIWindow();
+
+                        System.out.println("Вин AИ");
+
+                    }
                     if (checkWin(btn[i][j].getText())) {
-
-                        X = i;
-                        Y = j;
                         btn[i][j].setText(String.valueOf(DOT_O));
+                        if (checkWin(String.valueOf(DOT_O))) {
+                            setVisible(false);
+                            AIWindow aiWindow = new AIWindow();
 
+                            System.out.println("Вин AИ");
+
+                        }
                         return;
-
-                    } else btn[i][j].setText( String.valueOf(DOT_EMPTY));
+                    } else btn[i][j].setText(String.valueOf(DOT_EMPTY));
                 }
-
             }
         }
-
-
-              Y = rand.nextInt(SIZE);
-              X = rand.nextInt(SIZE);
+        Y = rand.nextInt(SIZE);
+        X = rand.nextInt(SIZE);
 
        if(isCellValid(X,Y)) {
 
            btn[X][Y].setText(String.valueOf(DOT_O));
            System.out.println(String.valueOf(X) + " " + String.valueOf(Y));
-
-
-           if(checkWin(String.valueOf(DOT_O))){
-               setVisible(false);
-               AIWindow aiWindow=new AIWindow();
-
-               System.out.println("Вин AИ");
-
-           }
-
-           }
-
-
-       else aiTurn();
-
-
-
-
+       }
+       // else aiTurn();
+        else GameRules();
     }
     public  boolean isCellValid(int x, int y) {
       if (btn[x][y].getText().equals(String.valueOf(DOT_X))||btn[x][y].getText().equals(String.valueOf(DOT_O))) return false;
         return btn[x][y].getText().equals(String.valueOf(DOT_EMPTY));
     }
         public void humanTern(int X , int Y){
+
            if (btn[X][Y].getText().equals(String.valueOf(DOT_EMPTY))) {
-
                btn[X][Y].setText(String.valueOf(DOT_X));
-
            }
-
-
-
-            System.out.println(String.valueOf(X) + " "+ String.valueOf(Y));
+           System.out.println(String.valueOf(X) + " "+ String.valueOf(Y));
            if( checkWin(String.valueOf(DOT_X))){
-
                System.out.println("Победа человека");
-
                HumanWindow humanWindow=new HumanWindow();
                setVisible(false);
+           }
 
-
-               }
-
-           else aiTurn();
+          // else aiTurn();
+            else GameRules();
 
 
 
@@ -204,6 +190,16 @@ public class GameUi extends JFrame {
             }
         }
         return true;
+    }
+    public void GameRules(){
+        if (checkWin(String.valueOf(DOT_O))) {
+            setVisible(false);
+            AIWindow aiWindow = new AIWindow();
+
+            System.out.println("Вин AИ");
+
+        }
+        aiTurn();
     }
 
 
