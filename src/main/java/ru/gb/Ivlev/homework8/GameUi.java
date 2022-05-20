@@ -93,6 +93,7 @@ public class GameUi extends JFrame {
 
     public void aiTurn (){
         if(isMapFull()){
+            setVisible(false);
             GameWindow gameWindow = new GameWindow();
 
 
@@ -144,6 +145,7 @@ public class GameUi extends JFrame {
 
 
            if(checkWin(String.valueOf(DOT_O))){
+               setVisible(false);
                AIWindow aiWindow=new AIWindow();
 
                System.out.println("Вин AИ");
@@ -176,7 +178,9 @@ public class GameUi extends JFrame {
            if( checkWin(String.valueOf(DOT_X))){
 
                System.out.println("Победа человека");
+
                HumanWindow humanWindow=new HumanWindow();
+               setVisible(false);
 
 
                }

@@ -10,7 +10,7 @@ public class HumanWindow extends JFrame {
     JTextField textField= new JTextField();
     textField.setFont(new Font("Arial", Font.BOLD, 80));
     add(textField);
-    textField.setText("       ПОБЕДИЛ ЧЕЛОВЕК");
+    textField.setText("   ПОБЕДИЛ ЧЕЛОВЕК");
 
 
 
